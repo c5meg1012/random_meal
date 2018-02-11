@@ -11,12 +11,20 @@ end
 
 def judge_key(key)
     if key == "\n"
-        puts "エンターキーを押したよ"
-        random_meal
+        select_random_meal
     else
         random_meal(false)
     end
 end
 
+STAPLE_FOOD = ["ごはん", "ごはん", "ごはん", "めん"]
+MAIN_DISH = ["魚", "肉"]
+
+def select_random_meal
+    staple = STAPLE_FOOD.sample
+    main = MAIN_DISH.sample
+
+    puts "今日は【#{main}】と【#{staple}】です！"
+end
 
 random_meal
